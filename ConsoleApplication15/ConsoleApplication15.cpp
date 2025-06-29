@@ -84,6 +84,32 @@ void sortBooksByYear(Library& lib) {
     }
 }
 
+void editBook(Library& lib, const string& name) {
+    for (int i = 0; i < lib.count; i++) {
+        if (lib.books[i].name == name) {
+            cout << "Редагування книги '" << lib.books[i].name << "':\n";
+
+            cout << "Нова назва: ";
+            getline(cin >> ws, lib.books[i].name);
+
+            cout << "Новий автор: ";
+            getline(cin, lib.books[i].author);
+
+            cout << "Новий рік: ";
+            cin >> lib.books[i].year;
+
+            cout << "Нова кількість сторінок: ";
+            cin >> lib.books[i].countPages;
+
+            cout << "Новий жанр: ";
+            getline(cin >> ws, lib.books[i].genre);
+
+            return;
+        }
+    }
+    cout << "Книгу не знайдено.\n";
+}
+
 
 
 int main()
