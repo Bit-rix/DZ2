@@ -20,6 +20,24 @@ struct Library {
     int count;
 };
 
+void showBook(const Book& b) {
+    cout << "\nКнига: " << b.name << endl;
+    cout << "Автор: " << b.author << endl;
+    cout << "Рік: " << b.year << endl;
+    cout << "Сторінок: " << b.countPages << endl;
+    cout << "Жанр: " << b.genre << endl;
+}
+
+void showAllBooks(const Library& lib) {
+    if (lib.count == 0) {
+        cout << "Книг немає.\n";
+        return;
+    }
+    for (int i = 0; i < lib.count; i++) {
+        showBook(lib.books[i]);
+    }
+}
+
 void addBook(Library& lib) {
     if (lib.count < 100) {
         cout << "Назва книги: ";
@@ -42,6 +60,16 @@ void addBook(Library& lib) {
     else {
         cout << "Місця немає, бібліотека заповнена!\n";
     }
+}
+
+void searchByName(const Library& lib, const string& name) {
+    for (int i = 0; i < lib.count; i++) {
+        if (lib.books[i].name == name) {
+            showBook(lib.books[i]);
+            return;
+        }
+    }
+    cout << "Книгу не знайдено.\n";
 }
 
 
