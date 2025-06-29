@@ -128,6 +128,31 @@ void deleteBook(Library& lib, const string& name) {
 
 int main()
 {
-    
+    setlocale(LC_ALL, "Ukrainian");
+
+    Library lib;
+    lib.year = 2024;
+    lib.address = "вул. Повітряна, 88";
+    lib.name = "Бібліотека-філія #15";
+    lib.owner = "Максим Ничай";
+    lib.maxCustomers = 100;
+    lib.count = 0;
+
+    addBook(lib);
+    addBook(lib);
+
+    cout << "\nВсі книги:\n";
+    showAllBooks(lib);
+
+    string name;
+    cout << "\nВведіть назву книги для пошуку: ";
+    getline(cin >> ws, name);
+    searchByName(lib, name);
+
+    sortBooksByYear(lib);
+    cout << "\nКниги після сортування за роком:\n";
+    showAllBooks(lib);
+
+
 }
 
