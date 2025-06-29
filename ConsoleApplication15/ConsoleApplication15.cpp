@@ -153,6 +153,22 @@ int main()
     cout << "\n ниги п≥сл€ сортуванн€ за роком:\n";
     showAllBooks(lib);
 
+    cout << "\n¬вед≥ть назву книги дл€ редагуванн€: ";
+    getline(cin >> ws, name);
+    editBook(lib, name);
+
+    cout << "\n ниги п≥сл€ редагуванн€:\n";
+    showAllBooks(lib);
+
+    cout << "\n¬вед≥ть назву книги дл€ видаленн€: ";
+    getline(cin >> ws, name);
+    deleteBook(lib, name);
+
+    cout << "\n ниги п≥сл€ видаленн€:\n";
+    showAllBooks(lib);
+
+    return 0;
+
 
 }
 
