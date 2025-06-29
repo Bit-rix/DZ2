@@ -20,6 +20,29 @@ struct Library {
     int count;
 };
 
+void addBook(Library& lib) {
+    if (lib.count < 100) {
+        cout << "Назва книги: ";
+        getline(cin >> ws, lib.books[lib.count].name);
+
+        cout << "Автор: ";
+        getline(cin, lib.books[lib.count].author);
+
+        cout << "Рік: ";
+        cin >> lib.books[lib.count].year;
+
+        cout << "Кількість сторінок: ";
+        cin >> lib.books[lib.count].countPages;
+
+        cout << "Жанр: ";
+        getline(cin >> ws, lib.books[lib.count].genre);
+
+        lib.count++;
+    }
+    else {
+        cout << "Місця немає, бібліотека заповнена!\n";
+    }
+}
 
 
 
