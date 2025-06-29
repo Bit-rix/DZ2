@@ -110,6 +110,20 @@ void editBook(Library& lib, const string& name) {
     cout << " нигу не знайдено.\n";
 }
 
+void deleteBook(Library& lib, const string& name) {
+    for (int i = 0; i < lib.count; i++) {
+        if (lib.books[i].name == name) {
+            for (int j = i; j < lib.count - 1; j++) {
+                lib.books[j] = lib.books[j + 1];
+            }
+            lib.count--;
+            cout << " нигу видалено.\n";
+            return;
+        }
+    }
+    cout << " нигу не знайдено.\n";
+}
+
 
 
 int main()
