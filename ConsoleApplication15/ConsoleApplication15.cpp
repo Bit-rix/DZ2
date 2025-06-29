@@ -62,6 +62,16 @@ void addBook(Library& lib) {
     }
 }
 
+void searchByName(const Library& lib, const string& name) {
+    for (int i = 0; i < lib.count; i++) {
+        if (lib.books[i].name == name) {
+            showBook(lib.books[i]);
+            return;
+        }
+    }
+    cout << " нигу не знайдено.\n";
+}
+
 
 
 int main()
