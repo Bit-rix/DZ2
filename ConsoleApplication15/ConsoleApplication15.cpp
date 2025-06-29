@@ -72,6 +72,18 @@ void searchByName(const Library& lib, const string& name) {
     cout << " нигу не знайдено.\n";
 }
 
+void sortBooksByYear(Library& lib) {
+    for (int i = 0; i < lib.count - 1; i++) {
+        for (int j = 0; j < lib.count - i - 1; j++) {
+            if (lib.books[j].year > lib.books[j + 1].year) {
+                Book temp = lib.books[j];
+                lib.books[j] = lib.books[j + 1];
+                lib.books[j + 1] = temp;
+            }
+        }
+    }
+}
+
 
 
 int main()
